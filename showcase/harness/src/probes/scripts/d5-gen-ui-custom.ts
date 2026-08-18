@@ -56,6 +56,13 @@ const CHART_INTEGRATIONS = new Set([
   // empty ("rendered but has no text content"). Surfaced once OSS-381 took
   // the cell out of not_supported. Pairs with aimock/d6/mastra/gen-ui-custom.json.
   "mastra",
+  // Both CrewAI columns register the same LGP-style `useComponent` chart demo
+  // (`render_pie_chart` / `render_bar_chart`), not the haiku shape. Their
+  // gen-ui-custom fixtures carry the pie-chart legs. Without these entries the
+  // probe sent the haiku prompt and waited for a haiku card the page cannot
+  // produce.
+  "crewai-crews",
+  "crewai-conversational-flows",
 ]);
 
 /**
